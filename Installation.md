@@ -23,7 +23,6 @@ conda install matplotlib dill pyyaml opencv scipy
 # follow PyTorch installation in https://pytorch.org/get-started/locally/
 # we give the instructions for CUDA 9.0
 conda install -c pytorch torchvision=0.2.1 cudatoolkit=9.0
-
 # This is the instructions for CUDA 10.1
 conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 
