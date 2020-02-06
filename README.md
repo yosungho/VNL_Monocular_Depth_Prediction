@@ -42,12 +42,22 @@ This repository contains the source code of our paper:
 ## Inference
 
 ```bash
+# Set the python path of VNL library 
+export PYTHONPATH=$HOME/VNL_Monocular_Depth_Prediction/lib/:$PYTHONPATH
+
 # Run the inferece on NYUDV2 dataset
  python  ./tools/test_nyu_metric.py \
 		--dataroot    ./datasets/NYUDV2 \
 		--dataset     nyudv2 \
 		--cfg_file     lib/configs/resnext101_32x4d_nyudv2_class \
-		--load_ckpt   ./nyu_rawdata.pth 
+		--load_ckpt   ./nyu_rawdata.pth
+		
+# Run the inferece on KITTI dataset	
+ python ./tools/test_kitti_metric.py \
+		--dataroot    ./datasets/KITTI \
+		--dataset     kitti \
+		--cfg_file     lib/configs/resnext101_32x4d_kitti_class \
+		--load_ckpt   ./kitti_official.pth
 		
 # Test depth predictions on any images, please replace the data dir in test_any_images.py
  python  ./tools/test_any_images.py \
